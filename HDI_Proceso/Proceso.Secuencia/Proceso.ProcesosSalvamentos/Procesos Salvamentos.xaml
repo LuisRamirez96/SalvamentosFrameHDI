@@ -94,6 +94,7 @@
         <Variable x:TypeArguments="x:Int32" Name="TransactionNumber" />
         <Variable x:TypeArguments="sd:DataRow" Name="TransactionItem" />
         <Variable x:TypeArguments="x:String" Name="NameSheet" />
+        <Variable x:TypeArguments="x:String" Name="LayoutFilePath" />
       </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -139,7 +140,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.True>
-              <FlowStep x:Name="__ReferenceID13">
+              <FlowStep x:Name="__ReferenceID12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">80,334.5</av:Point>
@@ -155,7 +156,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID12">
+                  <FlowStep x:Name="__ReferenceID11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">80,434.5</av:Point>
@@ -177,10 +178,13 @@
                         <OutArgument x:TypeArguments="x:String" x:Key="out_NameSheet">
                           <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="NameSheet" />
                         </OutArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_LayoutFilePath">
+                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="LayoutFilePath" />
+                        </OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID15">
+                      <FlowStep x:Name="__ReferenceID14">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">80,524.5</av:Point>
@@ -196,7 +200,7 @@
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID17">
+                          <FlowStep x:Name="__ReferenceID16">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">80,617</av:Point>
@@ -216,7 +220,7 @@
                               <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Cancelar proceso" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="excel" />
                             </Sequence>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID16">
+                              <FlowStep x:Name="__ReferenceID15">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">80,727</av:Point>
@@ -300,7 +304,7 @@
                                       </If>
                                     </Sequence>
                                     <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID18">
+                                      <FlowStep x:Name="__ReferenceID17">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">80,944.5</av:Point>
@@ -308,7 +312,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">280,970 417.5,970 417.5,1026.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch DisplayName="Try Catch Processes" sap:VirtualizedContainerService.HintSize="579,1155" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                        <TryCatch DisplayName="Try Catch Processes" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                           <TryCatch.Variables>
                                             <Variable x:TypeArguments="ui:BusinessRuleException" Name="BusinessException" />
                                           </TryCatch.Variables>
@@ -834,7 +838,7 @@
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Factura No Existe" CreateNewFile="False" DisplayName="Excel Application Scope Factura No Existe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Factura No Existe" CreateNewFile="False" DisplayName="Excel Application Scope Factura No Existe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -844,7 +848,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="No hay resultados de factura" CreateNewFile="False" DisplayName="Excel Application Scope Los Criterios No Generaron Resultados" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="No hay resultados de factura" CreateNewFile="False" DisplayName="Excel Application Scope Los Criterios No Generaron Resultados" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -864,7 +868,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Registro procesado" CreateNewFile="False" DisplayName="Excel Application Scope Registro Ya Procesado" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Registro procesado" CreateNewFile="False" DisplayName="Excel Application Scope Registro Ya Procesado" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -880,7 +884,7 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Número de Folio" CreateNewFile="False" DisplayName="Excel Application Scope Falta Folio" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Número de Folio" CreateNewFile="False" DisplayName="Excel Application Scope Falta Folio" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -890,7 +894,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Folio No Es Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Folio No Es Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -900,7 +904,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Subastadora" CreateNewFile="False" DisplayName="Excel Application Scope Falta Subastadora" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Subastadora" CreateNewFile="False" DisplayName="Excel Application Scope Falta Subastadora" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -910,7 +914,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Otro Canal" CreateNewFile="False" DisplayName="Excel Application Scope Otro Canal" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Otro Canal" CreateNewFile="False" DisplayName="Excel Application Scope Otro Canal" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -920,7 +924,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Subastadora Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Subastadora Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -930,7 +934,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Fecha de Factura" CreateNewFile="False" DisplayName="Excel Application Scope Falta Fecha" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Fecha de Factura" CreateNewFile="False" DisplayName="Excel Application Scope Falta Fecha" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -940,7 +944,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Estatus vacio o incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Estatus Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_11" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Estatus vacio o incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Estatus Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_11" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -950,7 +954,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Importe" CreateNewFile="False" DisplayName="Excel Application Scope Falta Importe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_12" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Importe" CreateNewFile="False" DisplayName="Excel Application Scope Falta Importe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_12" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -960,7 +964,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Importe no es numerico" CreateNewFile="False" DisplayName="Excel Application Scope Importe No Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_13" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Importe no es numerico" CreateNewFile="False" DisplayName="Excel Application Scope Importe No Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_13" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -970,7 +974,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Serie o es incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Serie Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_14" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Serie o es incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Serie Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_14" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -980,7 +984,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Ocurrio una advertencia" CreateNewFile="False" DisplayName="Excel Application Scope Ocurrió Una Advertencia" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_15" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Ocurrio una advertencia" CreateNewFile="False" DisplayName="Excel Application Scope Ocurrió Una Advertencia" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_15" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -990,7 +994,7 @@
                                                         </ActivityAction>
                                                       </ui:ExcelApplicationScope.Body>
                                                     </ui:ExcelApplicationScope>
-                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Tamaño folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Longitud Folio Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_16" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Tamaño folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Longitud Folio Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_16" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                       <ui:ExcelApplicationScope.Body>
                                                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                           <ActivityAction.Argument>
@@ -1007,7 +1011,7 @@
                                           </TryCatch.Catches>
                                         </TryCatch>
                                         <FlowStep.Next>
-                                          <FlowDecision x:Name="__ReferenceID19" Condition="[TransactionNumber &lt; Dt_Transaccion.Rows.Count]" DisplayName="Mas Transacciones?" sap:VirtualizedContainerService.HintSize="109,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                                          <FlowDecision x:Name="__ReferenceID18" Condition="[TransactionNumber &lt; Dt_Transaccion.Rows.Count]" DisplayName="Mas Transacciones?" sap:VirtualizedContainerService.HintSize="109,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1018,7 +1022,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <FlowDecision.True>
-                                              <FlowStep x:Name="__ReferenceID20">
+                                              <FlowStep x:Name="__ReferenceID19">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">80,1037</av:Point>
@@ -1040,7 +1044,7 @@
                                                       <InArgument x:TypeArguments="x:Int32">[TransactionNumber+1]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope Procesado" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_17" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                  <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope Procesado" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_17" Visible="False" WorkbookPath="[LayoutFilePath]">
                                                     <ui:ExcelApplicationScope.Body>
                                                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                         <ActivityAction.Argument>
@@ -1057,12 +1061,12 @@
                                               </FlowStep>
                                             </FlowDecision.True>
                                             <FlowDecision.False>
-                                              <FlowStep x:Name="__ReferenceID21">
+                                              <FlowStep x:Name="__ReferenceID20">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">490,1124.5</av:Point>
                                                     <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">590,1175.5 590,1244.5</av:PointCollection>
+                                                    <av:PointCollection x:Key="ConnectorLocation">590,1175.5 590,1227</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Envio De Correo Final workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="HDI_Proceso\Proceso.Secuencia\Proceso.EnvioDeCorreoFinal\Envio De Correo Final.xaml">
@@ -1093,21 +1097,32 @@
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:InvokeWorkflowFile>
                                                 <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID11">
+                                                  <FlowStep x:Name="__ReferenceID21">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">490,1244.5</av:Point>
-                                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                        <av:PointCollection x:Key="ConnectorLocation">490,1270 50,1270 50,227 310,227</av:PointCollection>
+                                                        <av:Point x:Key="ShapeLocation">490,1227</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">490,1260 50,1260 50,227 310,227</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:LogMessage DisplayName="Log Message El Proceso Concluyó..." sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;El proceso concluyó, buscando por nuevo correo...&quot;]">
+                                                    <Sequence DisplayName="Proceso concluyó..." sap:VirtualizedContainerService.HintSize="426,635" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                    </ui:LogMessage>
+                                                      <ui:LogMessage DisplayName="Log message (Kill processes)" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Trace" Message="[&quot;Process Concluded, Killing processes...&quot;]" />
+                                                      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Cancelar proceso" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="KillProcess_5" ProcessName="Tesoreria.UI.Win32" />
+                                                      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Cancelar proceso" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="KillProcess_6" ProcessName="excel" />
+                                                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_LayoutHDI+&quot;\Procesados\&quot;+&quot;LayoutProcesado&quot;+DateTime.Now.ToShortDateString.ToString+DateTime.Now.ToShortTimeString.ToString+&quot;.xlsx&quot;]" DisplayName="Mover archivo a Procesados" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[LayoutFilePath]" />
+                                                      <ui:LogMessage DisplayName="Log Message El Proceso Concluyó..." sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;El proceso concluyó, buscando por nuevo correo...&quot;]">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:LogMessage>
+                                                    </Sequence>
                                                     <FlowStep.Next>
                                                       <x:Reference>__ReferenceID9</x:Reference>
                                                     </FlowStep.Next>
@@ -1132,7 +1147,7 @@
               </FlowStep>
             </FlowDecision.True>
             <FlowDecision.False>
-              <FlowStep x:Name="__ReferenceID14">
+              <FlowStep x:Name="__ReferenceID13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">540,327</av:Point>
@@ -1206,7 +1221,6 @@
       <x:Reference>__ReferenceID12</x:Reference>
       <x:Reference>__ReferenceID13</x:Reference>
       <x:Reference>__ReferenceID14</x:Reference>
-      <x:Reference>__ReferenceID15</x:Reference>
       <FlowStep x:Name="__ReferenceID22">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1226,12 +1240,12 @@
           <x:Reference>__ReferenceID9</x:Reference>
         </FlowStep.Next>
       </FlowStep>
+      <x:Reference>__ReferenceID15</x:Reference>
       <x:Reference>__ReferenceID16</x:Reference>
       <x:Reference>__ReferenceID17</x:Reference>
-      <x:Reference>__ReferenceID18</x:Reference>
       <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID18</x:Reference>
       <x:Reference>__ReferenceID19</x:Reference>
-      <x:Reference>__ReferenceID20</x:Reference>
       <FlowStep>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1387,7 +1401,7 @@
           </If>
         </Sequence>
       </FlowStep>
-      <x:Reference>__ReferenceID21</x:Reference>
+      <x:Reference>__ReferenceID20</x:Reference>
       <FlowStep>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1422,6 +1436,7 @@
           </ui:InvokeWorkflowFile>
         </Sequence>
       </FlowStep>
+      <x:Reference>__ReferenceID21</x:Reference>
     </Flowchart>
   </Sequence>
 </Activity>
