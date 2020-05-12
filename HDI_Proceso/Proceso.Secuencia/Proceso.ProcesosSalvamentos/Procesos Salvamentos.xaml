@@ -308,7 +308,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">280,970 417.5,970 417.5,1026.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch DisplayName="Try Catch Processes" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                        <TryCatch DisplayName="Try Catch Processes" sap:VirtualizedContainerService.HintSize="579,1155" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                           <TryCatch.Variables>
                                             <Variable x:TypeArguments="ui:BusinessRuleException" Name="BusinessException" />
                                           </TryCatch.Variables>
@@ -430,7 +430,7 @@
                                                                 <av:PointCollection x:Key="ConnectorLocation">640,387 640,320 390,320</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Mata y reiniciar aplicaciones" sap:VirtualizedContainerService.HintSize="463,653" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                            <Sequence DisplayName="Mata y reiniciar aplicaciones" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -789,7 +789,7 @@
                                             </Flowchart>
                                           </TryCatch.Try>
                                           <TryCatch.Catches>
-                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="828,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="545,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -802,10 +802,10 @@
                                                 </ActivityAction.Argument>
                                               </ActivityAction>
                                             </Catch>
-                                            <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="828,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                            <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="545,971" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -813,13 +813,13 @@
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="Exception" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Secuencia Busines Rule Exception" sap:VirtualizedContainerService.HintSize="304,240" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                <Sequence DisplayName="Secuencia Busines Rule Exception" sap:VirtualizedContainerService.HintSize="539,902" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Assign DisplayName="Set transaction status to BusinessRuleException" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                  <Assign DisplayName="Set transaction status to BusinessRuleException" sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                                                     </Assign.To>
@@ -827,197 +827,180 @@
                                                       <InArgument x:TypeArguments="ui:BusinessRuleException">[Exception]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                                    <ui:CommentOut.Body>
-                                                      <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <Switch x:TypeArguments="x:String" DisplayName="Cambiar BRE" Expression="[BusinessException.Message]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-                                                          <sap:WorkflowViewStateService.ViewState>
-                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                            </scg:Dictionary>
-                                                          </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Factura No Existe" CreateNewFile="False" DisplayName="Excel Application Scope Factura No Existe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura No Existe" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Hoja1" Text="La factura no existe" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="No hay resultados de factura" CreateNewFile="False" DisplayName="Excel Application Scope Los Criterios No Generaron Resultados" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura No Resultados" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Hoja1" Text="Los criterios de busqueda no generaron resultados" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="El Total No Coincide" CreateNewFile="False" DisplayName="Excel Application Scope Total No Coincide" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura Total No Coincide" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Hoja1" Text="El total no coincide con la Tesoreria" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Registro procesado" CreateNewFile="False" DisplayName="Excel Application Scope Registro Ya Procesado" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura Registro Ya Procesado" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Hoja1" Text="El registro ya fue procesado" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Número de Folio" CreateNewFile="False" DisplayName="Excel Application Scope Falta Folio" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Folio" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Hoja1" Text="Falta Número de Folio" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Folio No Es Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Folio Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Hoja1" Text="Folio no es numérico" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Subastadora" CreateNewFile="False" DisplayName="Excel Application Scope Falta Subastadora" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Subastadora" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Hoja1" Text="Falta Subastadora" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Otro Canal" CreateNewFile="False" DisplayName="Excel Application Scope Otro Canal" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Otro Canal" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Hoja1" Text="Subastadora Otro Canal" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Subastadora Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Subastadora Incorrecta" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Hoja1" Text="La subastadora no es correcta" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Fecha de Factura" CreateNewFile="False" DisplayName="Excel Application Scope Falta Fecha" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Fecha" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Hoja1" Text="Falta Fecha de Factura" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Estatus vacio o incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Estatus Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_11" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Estatus Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Hoja1" Text="El estatus está vacio o no es Elaborado" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Importe" CreateNewFile="False" DisplayName="Excel Application Scope Falta Importe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_12" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Importe" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Hoja1" Text="Falta Importe" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Importe no es numerico" CreateNewFile="False" DisplayName="Excel Application Scope Importe No Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_13" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Importe Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Hoja1" Text="El Importe No Es Numérico" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Serie o es incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Serie Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_14" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Serie Incorrecta" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Hoja1" Text="La serie está vacía o es incorrecta" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Ocurrio una advertencia" CreateNewFile="False" DisplayName="Excel Application Scope Ocurrió Una Advertencia" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_15" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Ocurrió una advertencia" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Hoja1" Text="Ocurrió una advertencia" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                          <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Tamaño folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Longitud Folio Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_16" Visible="False" WorkbookPath="[Config(&quot;LayoutHDI&quot;).ToString]">
-                                                            <ui:ExcelApplicationScope.Body>
-                                                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Tamaño Folio Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Hoja1" Text="La longitud del Folio es incorrecta" />
-                                                              </ActivityAction>
-                                                            </ui:ExcelApplicationScope.Body>
-                                                          </ui:ExcelApplicationScope>
-                                                        </Switch>
-                                                      </Sequence>
-                                                    </ui:CommentOut.Body>
+                                                  <Switch x:TypeArguments="x:String" DisplayName="Cambiar BRE" Expression="[BusinessException.Message]" sap:VirtualizedContainerService.HintSize="497,710" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                  </ui:CommentOut>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Factura No Existe" CreateNewFile="False" DisplayName="Excel Application Scope Factura No Existe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura No Existe" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="[NameSheet]" Text="La factura no existe" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="No hay resultados de factura" CreateNewFile="False" DisplayName="Excel Application Scope Los Criterios No Generaron Resultados" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura No Resultados" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="[NameSheet]" Text="Los criterios de busqueda no generaron resultados" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="El Total No Coincide" CreateNewFile="False" DisplayName="Excel Application Scope Total No Coincide" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura Total No Coincide" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="[NameSheet]" Text="El total no coincide con la Tesoreria" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Registro procesado" CreateNewFile="False" DisplayName="Excel Application Scope Registro Ya Procesado" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Factura Registro Ya Procesado" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="[NameSheet]" Text="El registro ya fue procesado" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Número de Folio" CreateNewFile="False" DisplayName="Excel Application Scope Falta Folio" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Folio" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="[NameSheet]" Text="Falta Número de Folio" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Folio No Es Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Folio Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Hoja1" Text="[NameSheet]" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Subastadora" CreateNewFile="False" DisplayName="Excel Application Scope Falta Subastadora" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Subastadora" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="[NameSheet]" Text="Falta Subastadora" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Otro Canal" CreateNewFile="False" DisplayName="Excel Application Scope Otro Canal" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Otro Canal" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="[NameSheet]" Text="Subastadora Otro Canal" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Subastadora Incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Subastadora Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Subastadora Incorrecta" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="[NameSheet]" Text="La subastadora no es correcta" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Fecha de Factura" CreateNewFile="False" DisplayName="Excel Application Scope Falta Fecha" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Fecha" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="[NameSheet]" Text="Falta Fecha de Factura" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Estatus vacio o incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Estatus Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_11" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Estatus Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="[NameSheet]" Text="El estatus está vacio o no es Elaborado" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Importe" CreateNewFile="False" DisplayName="Excel Application Scope Falta Importe" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_12" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Falta Importe" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="[NameSheet]" Text="Falta Importe" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Importe no es numerico" CreateNewFile="False" DisplayName="Excel Application Scope Importe No Numerico" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_13" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Importe Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="[NameSheet]" Text="El Importe No Es Numérico" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Falta Serie o es incorrecta" CreateNewFile="False" DisplayName="Excel Application Scope Serie Incorrecta" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_14" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Serie Incorrecta" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="[NameSheet]" Text="La serie está vacía o es incorrecta" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Ocurrio una advertencia" CreateNewFile="False" DisplayName="Excel Application Scope Ocurrió Una Advertencia" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_15" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Ocurrió una advertencia" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="[NameSheet]" Text="Ocurrió una advertencia" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" x:Key="Tamaño folio incorrecto" CreateNewFile="False" DisplayName="Excel Application Scope Longitud Folio Incorrecto" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_16" Visible="False" WorkbookPath="[in_LayoutHDI]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <ui:ExcelWriteCell Cell="[&quot;M&quot;+(TransactionNumber+1).ToString]" DisplayName="Write Cell Tamaño Folio Incorrecto" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="[NameSheet]" Text="La longitud del Folio es incorrecta" />
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                  </Switch>
                                                 </Sequence>
                                               </ActivityAction>
                                             </Catch>
@@ -1043,7 +1026,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">80,1070 50,1070 50,869.58 80,869.58</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Set Transaction Number &amp; Status" sap:VirtualizedContainerService.HintSize="476,388" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                <Sequence DisplayName="Set Transaction Number &amp; Status" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
